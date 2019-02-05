@@ -25,6 +25,7 @@ class User:
 class LoginForm(FlaskForm):
     username = StringField('username', validators=[InputRequired('A username is required!'), Length(min=4, max=8, message="must be between 4 and 8 char")])
     password = PasswordField('password', validators=[InputRequired('A password is required'), AnyOf(values=['secret', 'word'])])
+    recaptcha = RecaptchaField()
     
     #create custom validation errors
     def validate_username(form, field):
@@ -47,4 +48,4 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host='0.0.0.0', port=3000, debug=True)

@@ -13,6 +13,8 @@ WTForms
             {{ form.csrf_token }}
             {{ wtf.form_field(form.username) }}
             {{ wtf.form_field(form.password) }}
+            
+            {{ wtf.form_field(form.recaptcha) }}
 
             
             <input class="btn btn-primary" type="submit" value="Submit">
